@@ -7,6 +7,8 @@
 
 import Foundation
 
+fileprivate let relativeDateFormatter = RelativeDateTimeFormatter()
+
 struct Article {
     let source: Source
     
@@ -24,6 +26,10 @@ struct Article {
     
     var descriptionText: String {
         description ?? ""
+    }
+    
+    var captionText: String {
+        "\(source.name) ․ \(relativeDateFormatter.localizedString(for: publishedAt, relativeTo: Date())) "
     }
     
     var articleUrl: URL {
