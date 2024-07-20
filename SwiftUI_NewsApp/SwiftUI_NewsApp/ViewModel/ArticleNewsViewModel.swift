@@ -30,6 +30,7 @@ class ArticleNewsViewModel: ObservableObject {
         self.selectedCategory = selectedCategory
     }
     
+    
     func loadArticles() async {
         phase = .empty
         do {
