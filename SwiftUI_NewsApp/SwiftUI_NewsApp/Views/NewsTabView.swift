@@ -14,15 +14,18 @@ struct NewsTabView: View {
         NavigationView{
             ArticleListView(articles: articles)
                 .overlay(overlayView)
-                .refreshable {
-                    
-                }
-                .onAppear {
-                    async {
-                        await articaleNewsVM.loadArticles()
-                    }
-                }
-                .navigationTitle(articaleNewsVM.selectedCategory.text)
+                .task(id: articaleNewsVM.fetchTaskToken, loadTask)
+                .refreshable(action: refershTask)
+//                   loadTask()
+//                }
+//                .onAppear {
+//                    loadTask()
+//                }
+//                .onChange(of: articaleNewsVM.selectedCategory, perform: { _ in
+//                    loadTask()
+//                })
+                .navigationTitle(articaleNewsVM.fetchTaskToken.category.text)
+                .navigationBarItems(trailing: menu)
         }
     }
     
@@ -33,9 +36,7 @@ struct NewsTabView: View {
              ProgressView()
         case .success(let articles) where articles.isEmpty:   EmptyPlaceholderView(text: "No Articles", image: nil)
         case .failure(let error):
-             RetryView(text: error.localizedDescription) {
-                // TODO : Refresh the news API
-            }
+             RetryView(text: error.localizedDescription, retryAction: refershTask)
         default:
             EmptyView()
         }
@@ -46,6 +47,27 @@ struct NewsTabView: View {
             return articles
         } else {
             return []
+        }
+    }
+    
+    private func loadTask() async{
+        await articaleNewsVM.loadArticles()
+    }
+    
+    private func refershTask(){
+        articaleNewsVM.fetchTaskToken = FetchTaskToken(category: articaleNewsVM.fetchTaskToken.category, token: Date())
+    }
+    
+    private var menu: some View {
+        Menu {
+            Picker("Category", selection: $articaleNewsVM.fetchTaskToken.category) {
+                ForEach(Category.allCases) {
+                    Text($0.text).tag($0)
+                }
+            }
+        } label: {
+            Image(systemName: "fiberchannel")
+                .imageScale(.large)
         }
     }
 }
