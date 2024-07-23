@@ -32,7 +32,11 @@ struct ArticleListView: View {
 }
 
 #Preview {
+    
+    @StateObject var articleBookmarkVM = ArticleBookmarkViewModel()
+    
     NavigationView {
         ArticleListView(articles: Article.previewData)
+            .environmentObject(articleBookmarkVM)
     }
 }

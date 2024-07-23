@@ -74,6 +74,9 @@ struct NewsTabView: View {
 
 
 #Preview {
+    @StateObject var articleBookmarkVM = ArticleBookmarkViewModel()
+    
     NewsTabView(articaleNewsVM: ArticleNewsViewModel(articles: Article.previewData))
+        .environmentObject(articleBookmarkVM)
 }
 

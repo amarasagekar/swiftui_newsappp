@@ -23,6 +23,7 @@
 		094B65D92C4C17BF00CADAF9 /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094B65D82C4C17BF00CADAF9 /* RetryView.swift */; };
 		096C377A2C48273E00E8B75E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C37792C48273E00E8B75E /* Article.swift */; };
 		096C377C2C482CA800E8B75E /* NewsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C377B2C482CA800E8B75E /* NewsAPIResponse.swift */; };
+		096F48222C4F5BA500AEAFDB /* ArticleBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096F48212C4F5BA500AEAFDB /* ArticleBookmarkViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		094B65D82C4C17BF00CADAF9 /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
 		096C37792C48273E00E8B75E /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		096C377B2C482CA800E8B75E /* NewsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIResponse.swift; sourceTree = "<group>"; };
+		096F48212C4F5BA500AEAFDB /* ArticleBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBookmarkViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				09242A7A2C4A1AF400AE74DB /* ArticleNewsViewModel.swift */,
+				096F48212C4F5BA500AEAFDB /* ArticleBookmarkViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				096C377C2C482CA800E8B75E /* NewsAPIResponse.swift in Sources */,
 				09242A782C4A0E5000AE74DB /* Category.swift in Sources */,
 				09242A7B2C4A1AF400AE74DB /* ArticleNewsViewModel.swift in Sources */,
+				096F48222C4F5BA500AEAFDB /* ArticleBookmarkViewModel.swift in Sources */,
 				09242A7D2C4A1FA400AE74DB /* NewsTabView.swift in Sources */,
 				096C377A2C48273E00E8B75E /* Article.swift in Sources */,
 				09376CA12C48C4E400290EA5 /* SafariView.swift in Sources */,
