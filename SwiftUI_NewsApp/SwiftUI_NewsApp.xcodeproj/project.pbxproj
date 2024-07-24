@@ -24,6 +24,7 @@
 		096C377A2C48273E00E8B75E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C37792C48273E00E8B75E /* Article.swift */; };
 		096C377C2C482CA800E8B75E /* NewsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C377B2C482CA800E8B75E /* NewsAPIResponse.swift */; };
 		096F48222C4F5BA500AEAFDB /* ArticleBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096F48212C4F5BA500AEAFDB /* ArticleBookmarkViewModel.swift */; };
+		096F48242C4F617500AEAFDB /* BookmarkTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096F48232C4F617500AEAFDB /* BookmarkTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		096C37792C48273E00E8B75E /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		096C377B2C482CA800E8B75E /* NewsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIResponse.swift; sourceTree = "<group>"; };
 		096F48212C4F5BA500AEAFDB /* ArticleBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBookmarkViewModel.swift; sourceTree = "<group>"; };
+		096F48232C4F617500AEAFDB /* BookmarkTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				09242A7C2C4A1FA400AE74DB /* NewsTabView.swift */,
 				094B65D62C4C15F800CADAF9 /* EmptyPlaceholderView.swift */,
 				094B65D82C4C17BF00CADAF9 /* RetryView.swift */,
+				096F48232C4F617500AEAFDB /* BookmarkTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				096C377A2C48273E00E8B75E /* Article.swift in Sources */,
 				09376CA12C48C4E400290EA5 /* SafariView.swift in Sources */,
 				09376CA42C48CB4800290EA5 /* NewsAPI.swift in Sources */,
+				096F48242C4F617500AEAFDB /* BookmarkTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
