@@ -33,7 +33,7 @@ struct ArticleListView: View {
 
 #Preview {
     
-    @StateObject var articleBookmarkVM = ArticleBookmarkViewModel()
+    @StateObject var articleBookmarkVM = ArticleBookmarkViewModel.shared
     
     NavigationView {
         ArticleListView(articles: Article.previewData)

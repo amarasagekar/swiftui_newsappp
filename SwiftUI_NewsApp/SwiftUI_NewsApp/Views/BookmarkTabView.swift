@@ -28,7 +28,7 @@ struct BookmarkTabView: View {
 }
 
 #Preview {
-    @EnvironmentObject var articleBookmarkVM: ArticleBookmarkViewModel
+    @StateObject var articleBookmarkVM = ArticleBookmarkViewModel.shared
     
     BookmarkTabView()
         .environmentObject(articleBookmarkVM)

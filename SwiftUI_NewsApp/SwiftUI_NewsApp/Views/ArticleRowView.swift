@@ -100,7 +100,7 @@ extension View {
 }
 
 #Preview {
-    @StateObject var articleBookmarkVM = ArticleBookmarkViewModel()
+    @StateObject var articleBookmarkVM = ArticleBookmarkViewModel.shared
     NavigationView {
         List{
             ArticleRowView(article: .previewData[0])
