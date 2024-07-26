@@ -20,7 +20,14 @@ struct NewsAPI {
     }()
     
     func fetch(from category:Category) async throws -> [Article] {
-        let url = generatedNewsURL(from: category)
+        try await fetchArticles(from: generatedNewsURL(from: category))
+    }
+    
+    func serach(for query:String) async throws -> [Article] {
+        try await fetchArticles(from: generateSearchURL(from: query))
+    }
+    
+    private func fetchArticles(from url: URL) async throws -> [Article]{
         let (data, response) = try await session.data(from: url)
         
         guard let response = response as? HTTPURLResponse else {
@@ -42,6 +49,15 @@ struct NewsAPI {
     
     private func generateError(code: Int = 1, description: String) -> Error {
         NSError(domain: "NewsAPI", code: code, userInfo: [NSLocalizedDescriptionKey: description])
+    }
+    
+    private func generateSearchURL(from query:String) -> URL {
+        let percentEncodedString = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
+        var url = "https://newsapi.org/v2/everything?"
+        url += "apikey=\(apiKey)"
+        url += "&language=en"
+        url += "&q=\(percentEncodedString)"
+        return URL(string: url)!
     }
     
     private func generatedNewsURL(from category: Category) -> URL {
