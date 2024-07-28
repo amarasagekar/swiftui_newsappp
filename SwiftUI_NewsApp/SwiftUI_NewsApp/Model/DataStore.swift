@@ -16,7 +16,7 @@ protocol DataStore: Actor {
 
 actor PlistDataStore<T: Codable>: DataStore where T: Equatable {
     
-    var saved: T?
+    private var saved: T?
     let fileName: String
    
     init(fileName: String){
